@@ -1,11 +1,13 @@
 extends Node2D
-## George Street graybox — bus → tea → auto → milk → pour.
+## George Street — art pass + dense pushables + quest.
 
 const STREET_W := 4800.0
 
 @onready var player: CharacterBody2D = $Player
 @onready var camera: Camera2D = $Camera2D
 @onready var world: Node2D = $World
+@onready var far_layer: Node2D = $Parallax/Far
+@onready var mid_layer: Node2D = $Parallax/Mid
 @onready var interactables: Node2D = $Interactables
 @onready var subtitle: Label = $UI/Subtitle
 @onready var bubble: Label = $UI/Bubble
@@ -13,8 +15,10 @@ const STREET_W := 4800.0
 var tea_bench: StaticBody2D
 var auto_block: StaticBody2D
 var milk_node: Area2D
-var coconut: ColorRect
+var coconut: Node2D
+var dog: Node2D
 var _fare_hits: int = 0
+var _tumbler_hits: int = 0
 
 
 func _ready() -> void:
@@ -23,43 +27,203 @@ func _ready() -> void:
 	Dialogue.line_spoken.connect(_on_line)
 	GameState.flag_changed.connect(_on_flag)
 	camera.bounds = Rect2(0, 0, STREET_W, 1080)
+	_apply_fonts()
 	await get_tree().create_timer(0.2).timeout
 	Dialogue.speak("bus_conductor", "eject")
 	GameState.add_alias("குட்டி")
 
 
+func _process(_delta: float) -> void:
+	# Cheap parallax follow
+	if player:
+		far_layer.position.x = -player.global_position.x * 0.15
+		mid_layer.position.x = -player.global_position.x * 0.35
+	if dog and GameState.get_flag("dog_following"):
+		dog.global_position = dog.global_position.lerp(
+			player.global_position + Vector2(-40, 10), 0.08
+		)
+
+
+func _apply_fonts() -> void:
+	var tamil := load("res://fonts/NotoSansTamil-Regular.ttf")
+	if tamil:
+		bubble.add_theme_font_override("font", tamil)
+	var hand := load("res://fonts/PatrickHand-Regular.ttf")
+	if hand:
+		subtitle.add_theme_font_override("font", hand)
+
+
 func _build_world() -> void:
-	# Floor
 	_add_floor(0, STREET_W, 920)
-	# Zone labels
+	_sky_band()
+	_sprite(far_layer, "res://art/svg/props/kolam.svg", Vector2(900, 860), 0.35)
+	_sprite(mid_layer, "res://art/svg/bg/tea_kadai_slice.svg", Vector2(900, 480), 0.85)
+	_sprite(world, "res://art/svg/props/signboard.svg", Vector2(1050, 520), 0.7)
+
 	_label(80, 40, "1 BUS STOP")
-	_label(1100, 40, "2 TEA KADAI")
-	_label(2600, 40, "3 AUTO + MILK")
+	_label(1100, 40, "2 டீ கடை")
+	_label(2600, 40, "3 ஆட்டோ")
 
-	# Bus (decor)
-	_rect_decor(120, 700, 220, 200, Color(0.45, 0.55, 0.35), "Bus")
+	_sprite(world, "res://art/svg/props/auto.svg", Vector2(200, 720), 0.55)  # parked bus-side auto decor
+	tea_bench = _static_blocker(1280, 880, 160, 40, Color(0.45, 0.3, 0.15), "TeaBench")
+	auto_block = _static_blocker(2800, 820, 200, 90, Color(0.95, 0.76, 0.19), "AutoBlock")
+	_sprite(auto_block, "res://art/svg/props/auto.svg", Vector2(0, -20), 0.7)
+	coconut = _sprite(world, "res://art/svg/props/water_pot.svg", Vector2(3100, 780), 0.4)
 
-	# Tea kadai block
-	_rect_decor(1000, 620, 360, 280, Color(0.91, 0.79, 0.55), "Kadai")
-	tea_bench = _static_blocker(1280, 860, 160, 40, Color(0.45, 0.3, 0.15), "TeaBench")
+	# Core quest pushables
+	_make_pushable_sprite("TeaMaster", 1180, 820, "res://art/svg/chars/tea_master.svg", 0.45, "squash", _on_tea_pushed)
+	_make_pushable_sprite("AutoDriver", 2860, 840, "res://art/svg/chars/tea_master.svg", 0.35, "wobble", _on_auto_pushed)
+	milk_node = _make_pushable_sprite("Milk", 3300, 840, "res://art/svg/props/milk_packet.svg", 0.55, "launch", _on_milk_pushed)
+	_make_pushable_sprite("DirectionsMan", 600, 840, "res://art/svg/chars/tea_master.svg", 0.35, "wobble", _on_directions)
 
-	# Auto blocker
-	auto_block = _static_blocker(2800, 820, 200, 80, Color(0.95, 0.76, 0.19), "AutoBlock")
-	coconut = _rect_decor(3100, 780, 60, 60, Color(0.45, 0.55, 0.25), "Coconut")
+	# Dense gag inventory (18+)
+	_make_pushable_sprite("Bananas", 1500, 700, "res://art/svg/props/banana_bunch.svg", 0.5, "wobble", _on_bananas)
+	_make_pushable_sprite("TeaGlasses", 1350, 780, "res://art/svg/props/tea_glasses.svg", 0.55, "squash", _on_glasses)
+	_make_pushable_sprite("Radio", 1420, 760, "res://art/svg/props/water_pot.svg", 0.3, "spin", _on_radio)
+	_make_pushable_sprite("Horn", 2750, 800, "res://art/svg/props/auto.svg", 0.25, "wobble", _on_horn)
+	_make_pushable_sprite("Kolam", 880, 880, "res://art/svg/props/kolam.svg", 0.4, "squash", _on_kolam)
+	_make_pushable_sprite("WireCrows", 400, 200, "res://art/svg/props/banana_bunch.svg", 0.2, "wobble", _on_crows)
+	_make_pushable_sprite("WaterPot", 1600, 820, "res://art/svg/props/water_pot.svg", 0.5, "wobble", _on_pot)
+	_make_pushable_sprite("Poster", 500, 700, "res://art/svg/props/cutout.svg", 0.25, "wobble", _on_poster)
+	_make_pushable_sprite("Cutout", 3600, 700, "res://art/svg/props/cutout.svg", 0.55, "spin", _on_cutout)
+	_make_pushable_sprite("Dog", 750, 860, "res://art/svg/props/water_pot.svg", 0.25, "squash", _on_dog)
+	_make_pushable_sprite("Kids", 950, 850, "res://art/svg/chars/robot_full_confused.svg", 0.3, "launch", _on_kids)
+	_make_pushable_sprite("BiscuitJar", 1250, 740, "res://art/svg/props/tea_glasses.svg", 0.35, "wobble")
+	_make_pushable_sprite("Meter", 2920, 780, "res://art/svg/props/milk_packet.svg", 0.25, "fall", _on_meter)
+	_make_pushable_sprite("SignSway", 1700, 600, "res://art/svg/props/signboard.svg", 0.4, "wobble")
+	_make_pushable_sprite("CoconutStall", 3050, 840, "res://art/svg/props/water_pot.svg", 0.35, "fall", _on_coconut_stall)
+	_make_pushable_sprite("BusLean", 180, 780, "res://art/svg/props/auto.svg", 0.4, "wobble", _on_bus)
+	_make_pushable_sprite("SteamPot", 1100, 800, "res://art/svg/props/water_pot.svg", 0.35, "squash", _on_steam)
+	_make_pushable_sprite("BenchRegular", 1550, 860, "res://art/svg/chars/tea_master.svg", 0.3, "wobble")
 
-	# Pushable NPCs / props
-	_make_pushable("TeaMaster", 1180, 850, Color(0.24, 0.44, 0.69), "squash", _on_tea_pushed)
-	_make_pushable("AutoDriver", 2850, 850, Color(0.7, 0.4, 0.2), "wobble", _on_auto_pushed)
-	milk_node = _make_pushable("Milk", 3300, 850, Color(0.95, 0.95, 0.9), "launch", _on_milk_pushed)
-	_make_pushable("DirectionsMan", 600, 850, Color(0.6, 0.5, 0.4), "wobble", _on_directions)
-	_make_pushable("Radio", 1400, 780, Color(0.7, 0.23, 0.18), "spin")
-	_make_pushable("Bananas", 1500, 760, Color(0.91, 0.78, 0.29), "wobble")
-
+	dog = interactables.get_node_or_null("Dog")
 	_update_blockers()
+	_idle_all()
+
+
+func _idle_all() -> void:
+	for n in world.get_children():
+		if n is Sprite2D or (n is Node2D and n.get_child_count() > 0 and n.get_child(0) is Sprite2D):
+			if n.get_node_or_null("IdleLife") == null:
+				var idle := IdleLife.new()
+				idle.sway_deg = 1.2
+				idle.speed = 0.8 + randf()
+				n.add_child(idle)
+
+
+func _sky_band() -> void:
+	var sky := ColorRect.new()
+	sky.size = Vector2(STREET_W, 1080)
+	sky.color = Color(0.965, 0.906, 0.757)
+	sky.z_index = -100
+	far_layer.add_child(sky)
+	# heat shimmer overlay
+	var shim := ColorRect.new()
+	shim.size = Vector2(STREET_W, 200)
+	shim.position = Vector2(0, 700)
+	shim.color = Color(1, 1, 1, 0.08)
+	shim.z_index = 50
+	world.add_child(shim)
+
+
+func _sprite(parent: Node, path: String, pos: Vector2, scale_f: float) -> Node2D:
+	var holder := Node2D.new()
+	holder.position = pos
+	var s := Sprite2D.new()
+	if ResourceLoader.exists(path):
+		s.texture = load(path)
+	s.scale = Vector2(scale_f, scale_f)
+	holder.add_child(s)
+	parent.add_child(holder)
+	return holder
 
 
 func _on_directions(_d: Vector2, _c: int) -> void:
 	Dialogue.speak("directions_man")
+
+
+func _on_bananas(_d: Vector2, c: int) -> void:
+	if c == 1:
+		subtitle.text = "Banana: freefall. Crow: already budgeting."
+		AudioBus.play_sfx("res://audio/sfx/crow.wav")
+
+
+func _on_glasses(_d: Vector2, c: int) -> void:
+	_tumbler_hits = c
+	var path := "res://audio/sfx/clink.wav"
+	if c % 3 == 2:
+		path = "res://audio/sfx/clink2.wav"
+	elif c % 3 == 0:
+		path = "res://audio/sfx/clink3.wav"
+	AudioBus.play_sfx(path)
+
+
+func _on_radio(_d: Vector2, c: int) -> void:
+	var j := "res://audio/sfx/jingle%d.wav" % (wrapi(c, 1, 4))
+	AudioBus.play_sfx(j)
+
+
+func _on_horn(_d: Vector2, _c: int) -> void:
+	AudioBus.play_sfx("res://audio/sfx/horn.wav")
+	await get_tree().create_timer(0.15).timeout
+	AudioBus.play_sfx("res://audio/sfx/horn.wav", "SFX", 0.92)
+	await get_tree().create_timer(0.12).timeout
+	AudioBus.play_sfx("res://audio/sfx/horn.wav", "SFX", 1.08)
+
+
+func _on_kolam(_d: Vector2, _c: int) -> void:
+	Dialogue.speak("kolam_lady", "smudge")
+
+
+func _on_crows(_d: Vector2, _c: int) -> void:
+	AudioBus.play_sfx("res://audio/sfx/crow.wav")
+	subtitle.text = "Crows: hop left. Union decision."
+
+
+func _on_pot(_d: Vector2, c: int) -> void:
+	if c >= 3:
+		subtitle.text = "Pot: finally dramatic."
+
+
+func _on_poster(_d: Vector2, c: int) -> void:
+	subtitle.text = "Poster peel #%d — identical underneath." % c
+
+
+func _on_cutout(_d: Vector2, _c: int) -> void:
+	subtitle.text = "Cutout rotated 2°. Fans gasp (internally)."
+
+
+func _on_dog(_d: Vector2, _c: int) -> void:
+	GameState.set_flag("dog_following", true)
+	subtitle.text = "Dog: employment acquired."
+
+
+func _on_kids(_d: Vector2, _c: int) -> void:
+	player.velocity.x = -player.facing * 320
+	AudioBus.play_beep(1.4)
+	subtitle.text = "Kids pushed back. Robot indignant."
+
+
+func _on_meter(_d: Vector2, _c: int) -> void:
+	subtitle.text = "Meter fell off. As designed."
+
+
+func _on_coconut_stall(_d: Vector2, _c: int) -> void:
+	if coconut:
+		var tw := create_tween()
+		tw.tween_property(coconut, "position:x", coconut.position.x + 800, 1.2)
+
+
+func _on_bus(_d: Vector2, c: int) -> void:
+	subtitle.text = "Bus lean angle: %d° of optimism." % (c * 3)
+
+
+func _on_steam(_d: Vector2, _c: int) -> void:
+	var heat := player.get_node_or_null("HeatBody")
+	if heat:
+		heat.set_in_sun(false)
+		await get_tree().create_timer(2.0).timeout
+		heat.set_in_sun(true)
 
 
 func _add_floor(x0: float, x1: float, y: float) -> void:
@@ -83,17 +247,10 @@ func _label(x: float, y: float, text: String) -> void:
 	l.text = text
 	l.position = Vector2(x, y)
 	l.add_theme_font_size_override("font_size", 28)
+	var tamil := load("res://fonts/NotoSansTamil-Regular.ttf")
+	if tamil:
+		l.add_theme_font_override("font", tamil)
 	world.add_child(l)
-
-
-func _rect_decor(x: float, y: float, w: float, h: float, color: Color, named: String) -> ColorRect:
-	var r := ColorRect.new()
-	r.name = named
-	r.size = Vector2(w, h)
-	r.position = Vector2(x, y)
-	r.color = color
-	world.add_child(r)
-	return r
 
 
 func _static_blocker(x: float, y: float, w: float, h: float, color: Color, named: String) -> StaticBody2D:
@@ -109,18 +266,18 @@ func _static_blocker(x: float, y: float, w: float, h: float, color: Color, named
 	vis.size = Vector2(w, h)
 	vis.position = Vector2(-w * 0.5, -h * 0.5)
 	vis.color = color
+	vis.modulate.a = 0.35
 	body.add_child(vis)
-	# shift shape to center
-	shape.position = Vector2.ZERO
 	world.add_child(body)
 	return body
 
 
-func _make_pushable(
+func _make_pushable_sprite(
 	named: String,
 	x: float,
 	y: float,
-	color: Color,
+	tex_path: String,
+	scale_f: float,
 	reaction: String,
 	cb: Callable = Callable(),
 ) -> Area2D:
@@ -133,22 +290,18 @@ func _make_pushable(
 	area.monitorable = true
 	var shape := CollisionShape2D.new()
 	var rect := RectangleShape2D.new()
-	rect.size = Vector2(56, 56)
+	rect.size = Vector2(64, 64)
 	shape.shape = rect
 	area.add_child(shape)
-	var vis := ColorRect.new()
-	vis.size = Vector2(56, 56)
-	vis.position = Vector2(-28, -28)
-	vis.color = color
-	area.add_child(vis)
-	var tag := Label.new()
-	tag.text = named
-	tag.position = Vector2(-30, -48)
-	tag.add_theme_font_size_override("font_size", 12)
-	area.add_child(tag)
+	var s := Sprite2D.new()
+	if ResourceLoader.exists(tex_path):
+		s.texture = load(tex_path)
+	s.scale = Vector2(scale_f, scale_f)
+	area.add_child(s)
 	var p := Pushable.new()
 	p.reaction = reaction
 	p.custom_id = named
+	p.sfx_path = "res://audio/sfx/push.wav"
 	area.add_child(p)
 	if cb.is_valid():
 		p.pushed.connect(cb)
@@ -172,11 +325,9 @@ func _on_flag(flag_name: String, value: Variant) -> void:
 
 
 func _update_blockers() -> void:
-	# Tea bench is scenic after milk; only auto hard-blocks the milk lane.
-	if tea_bench:
-		if GameState.get_flag("has_milk"):
-			tea_bench.visible = false
-			tea_bench.set_collision_layer_value(1, false)
+	if tea_bench and GameState.get_flag("has_milk"):
+		tea_bench.visible = false
+		tea_bench.set_collision_layer_value(1, false)
 	if auto_block:
 		var block_auto: bool = not GameState.get_flag("auto_moved")
 		auto_block.visible = block_auto

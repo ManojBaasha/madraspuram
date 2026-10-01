@@ -1,0 +1,10 @@
+SIL Open Font License 1.1 applies to:
+
+- fonts/NotoSansTamil-Regular.ttf
+- fonts/NotoSansTamil-Bold.ttf
+  Copyright 2017-2022 Google Inc. (Noto Sans Tamil)
+
+- fonts/PatrickHand-Regular.ttf
+  Copyright (c) 2012 Patrick Wagesreither (Patrick Hand)
+
+Full OFL text: https://openfontlicense.org/

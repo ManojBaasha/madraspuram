@@ -19,8 +19,8 @@
           "confidence": "medium"
         },
         "after_tea": {
-          "ta": "குடிச்சுட்டு போடா ரோபோ.",
-          "en_subtitle": "Drink finish then go robot.",
+          "ta": "குடிச்சுட்டு போடா ரோபோ. குளிர்ச்சிக்கு.",
+          "en_subtitle": "Drink finish then go robot. For cooling purpose.",
           "confidence": "medium"
         }
       }
@@ -43,8 +43,8 @@
           "confidence": "high"
         },
         "moved": {
-          "ta": "சரி போங்கடா.",
-          "en_subtitle": "OK go-da.",
+          "ta": "சரி போங்கடா. கோப்பரங்களுக்குள்ள.",
+          "en_subtitle": "OK go-da. Into the coconuts.",
           "confidence": "medium"
         }
       }
@@ -65,6 +65,16 @@
         "default": {
           "ta": "நேரா போயி லெஃப்ட் எடு, அப்புறம் யார்கிட்டயாவது கேளு.",
           "en_subtitle": "Straight go take left, after ask anybody.",
+          "confidence": "high"
+        }
+      }
+    },
+    "kolam_lady": {
+      "default": "smudge",
+      "lines": {
+        "smudge": {
+          "ta": "டேய்! இப்போ தான் போட்டேன்!",
+          "en_subtitle": "Dei! Just now only I kept!",
           "confidence": "high"
         }
       }

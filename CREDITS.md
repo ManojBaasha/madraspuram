@@ -1,7 +1,10 @@
 # Credits
 
 ## Fonts
-- (Phase 7+) SIL OFL Tamil + Latin fonts bundled under `fonts/`. Licenses copied beside each file.
+- **Noto Sans Tamil** (Google) — SIL OFL 1.1 — `fonts/NotoSansTamil-*.ttf`
+- **Patrick Hand** (Patrick Wagesreither) — SIL OFL 1.1 — `fonts/PatrickHand-Regular.ttf`
+- See `fonts/OFL.txt`.
+
 
 ## Engine / tools
 - [Godot Engine](https://godotengine.org/) — MIT

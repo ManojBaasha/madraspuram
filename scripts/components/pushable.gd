@@ -38,7 +38,9 @@ func receive_push(direction: Vector2) -> void:
 		r = "exhausted"
 	reacted.emit(r)
 	if ResourceLoader.exists(sfx_path):
-		AudioBus.play_sfx(sfx_path, "SFX", 1.0 + randf_range(-0.05, 0.08))
+		var bus := get_node_or_null("/root/AudioBus")
+		if bus:
+			bus.play_sfx(sfx_path, "SFX", 1.0 + randf_range(-0.05, 0.08))
 	# Skip long juice in headless/bots so quest automation stays reliable
 	if DisplayServer.get_name() == "headless" or OS.has_feature("movie"):
 		return

@@ -7,7 +7,7 @@ config_version=5
 
 config/name="Madraspuram"
 config/description="A tiny robot on George Street. Push everything."
-run/main_scene="res://scenes/levels/george_street.tscn"
+run/main_scene="res://scenes/ui/title.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -72,4 +72,5 @@ pause={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.965, 0.906, 0.757, 1)
