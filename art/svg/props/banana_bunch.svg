@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="130" viewBox="0 0 160 130">
+
+<g>
+<path d="M 80.00 10.00 L 79.89 25.26 L 80.00 40.00" fill="none" stroke="#3F6B3A" stroke-width="5" stroke-linecap="round"/>
+<path d="M 77.00 70.00 L 73.51 89.10 L 66.15 104.50 L 56.11 111.15 L 45.04 104.53 L 36.60 90.40 L 32.81 69.34 L 36.58 50.97 L 45.12 36.37 L 56.00 28.88 L 66.20 36.48 L 74.05 50.00 Z" fill="#E8C84A" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 102.00 75.00 L 99.95 96.75 L 90.81 110.33 L 79.48 118.18 L 68.17 110.62 L 61.06 96.74 L 57.34 74.36 L 60.24 54.80 L 68.66 39.46 L 79.93 33.32 L 91.91 39.57 L 99.05 54.00 Z" fill="#E8C84A" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 127.00 70.00 L 124.61 90.54 L 115.13 104.18 L 105.10 110.40 L 94.95 105.76 L 85.52 90.72 L 82.81 69.29 L 84.82 49.42 L 94.57 34.31 L 104.80 29.46 L 115.16 34.21 L 124.05 50.00 Z" fill="#E8C84A" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 88.00 55.00 L 85.80 69.52 L 80.12 79.18 L 70.08 83.79 L 59.97 78.68 L 53.66 68.65 L 51.65 55.32 L 54.16 41.86 L 61.17 31.46 L 70.83 26.90 L 78.11 30.03 L 85.59 41.00 Z" fill="#E8C84A" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 108.00 55.00 L 105.71 68.10 L 98.09 80.24 L 90.38 82.21 L 82.02 78.62 L 74.84 70.10 L 71.09 55.27 L 75.27 42.01 L 80.14 30.77 L 89.87 26.28 L 97.82 30.75 L 105.59 41.00 Z" fill="#E8C84A" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+</svg>

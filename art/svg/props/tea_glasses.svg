@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="100" viewBox="0 0 170 100">
+
+<g>
+<path d="M 20.00 30.00 L 44.14 29.13 L 39.33 79.40 L 24.00 80.00 Z" fill="#D8E8F0" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+<path d="M 26.00 50.00 L 37.85 50.36 L 35.83 77.50 L 28.00 78.00 Z" fill="#C4A35A" stroke="#2B1D14" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 55.00 30.00 L 79.90 29.32 L 73.80 79.82 L 59.00 80.00 Z" fill="#D8E8F0" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+<path d="M 61.00 50.00 L 72.37 48.95 L 71.17 77.84 L 63.00 78.00 Z" fill="#C4A35A" stroke="#2B1D14" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 90.00 30.00 L 114.42 30.44 L 108.69 79.01 L 94.00 80.00 Z" fill="#D8E8F0" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+<path d="M 96.00 50.00 L 109.05 50.88 L 105.78 76.78 L 98.00 78.00 Z" fill="#C4A35A" stroke="#2B1D14" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 125.00 30.00 L 149.18 31.31 L 144.79 81.04 L 129.00 80.00 Z" fill="#D8E8F0" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+<path d="M 131.00 50.00 L 143.65 50.63 L 139.98 77.46 L 133.00 78.00 Z" fill="#C4A35A" stroke="#2B1D14" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+</svg>

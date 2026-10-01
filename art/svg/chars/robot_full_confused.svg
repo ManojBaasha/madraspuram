@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="180" viewBox="0 0 200 180">
+<rect width="200" height="180" fill="#F6E7C1"/>
+<g>
+<path d="M 130.00 168.00 L 123.76 172.83 L 110.63 174.34 L 89.99 175.88 L 70.36 175.62 L 54.38 170.87 L 50.81 167.84 L 55.99 162.81 L 69.87 161.60 L 89.35 161.07 L 110.96 159.95 L 124.64 164.00 Z" fill="#000000" stroke="none" stroke-width="0" stroke-linejoin="round" stroke-linecap="round" opacity="0.15"/>
+<path d="M 50.00 90.00 L 131.28 91.25 L 122.76 153.84 L 56.00 155.00 Z" fill="#7A9BB8" stroke="#2B1D14" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="74.0" y="128.0" width="32.0" height="16.0" rx="3" fill="#E8EEF2" stroke="#2B1D14" stroke-width="3"/>
+<path d="M 52.00 150.00 L 127.26 148.89 L 119.71 167.03 L 60.00 168.00 Z" fill="#1A2430" stroke="#2B1D14" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 40.00 50.00 L 120.34 50.68 L 116.83 96.24 L 44.00 95.00 Z" fill="#7A9BB8" stroke="#2B1D14" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<g>
+<rect x="40.0" y="48.0" width="48.0" height="28.0" rx="4" fill="#1A2430" stroke="#2B1D14" stroke-width="3"/>
+<text x="64" y="70" text-anchor="middle" font-size="22" font-family="sans-serif" fill="#A8E6CF">?</text>
+</g>
+<path d="M 80.00 50.00 L 80.59 39.64 L 80.00 28.00" fill="none" stroke="#7A9BB8" stroke-width="4" stroke-linecap="round"/>
+<path d="M 87.00 22.00 L 85.24 25.28 L 82.53 27.63 L 77.92 28.34 L 73.28 26.13 L 71.89 21.84 L 73.30 16.90 L 77.66 16.13 L 81.26 14.68 L 85.66 17.89 Z" fill="#B23A2E" stroke="#2B1D14" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 120.00 100.00 L 157.23 95.29 L 158.95 110.57 L 120.00 114.00 Z" fill="#E8EEF2" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 158.00 86.00 L 181.90 99.65 L 158.00 116.00 Z" fill="#7A9BB8" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+</svg>

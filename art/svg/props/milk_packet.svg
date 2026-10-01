@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="130" viewBox="0 0 110 130">
+
+<g>
+<path d="M 20.00 20.00 L 91.18 14.46 L 96.17 108.84 L 15.00 115.00 Z" fill="#E8EEF2" stroke="#2B1D14" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 30.00 35.00 L 81.16 33.96 L 80.76 64.72 L 30.00 65.00 Z" fill="#B23A2E" stroke="#2B1D14" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="55" y="55" text-anchor="middle" font-size="14" fill="#FBF7EE">பாவின்</text>
+<text x="55" y="85" text-anchor="middle" font-size="11" fill="#2B1D14">MILK</text>
+</g>
+</svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="440" viewBox="0 0 640 440">
+<rect width="640" height="440" fill="#F6E7C1"/>
+<g>
+<path d="M 0.00 70.00 L 320.59 63.40 L 640.00 55.00" fill="none" stroke="#2B1D14" stroke-width="3" stroke-linecap="round"/>
+<path d="M 40.00 90.00 L 320.28 81.26 L 600.00 72.00" fill="none" stroke="#2B1D14" stroke-width="2" stroke-linecap="round"/>
+<path d="M 126.00 68.00 L 125.40 69.77 L 120.87 71.77 L 114.89 70.67 L 114.62 68.93 L 115.15 64.97 L 120.25 65.16 L 124.24 65.17 Z" fill="#2B1D14" stroke="#2B1D14" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 286.00 60.00 L 283.28 63.69 L 279.40 64.71 L 276.42 63.98 L 274.74 60.88 L 276.89 57.95 L 279.57 55.54 L 284.24 57.17 Z" fill="#2B1D14" stroke="#2B1D14" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 486.00 58.00 L 483.23 60.56 L 480.85 62.26 L 474.61 61.38 L 474.08 58.88 L 476.50 54.42 L 479.13 52.90 L 484.24 55.17 Z" fill="#2B1D14" stroke="#2B1D14" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 30.00 110.00 L 470.02 109.07 L 469.59 380.86 L 30.00 380.00 Z" fill="#E9C98B" stroke="#2B1D14" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 30.00 110.00 L 469.08 109.59 L 469.14 164.47 L 30.00 165.00 Z" fill="#3E6FB0" stroke="#2B1D14" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 70.00 200.00 L 138.65 198.97 L 140.33 320.46 L 70.00 320.00 Z" fill="#C9B07A" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 60.00 270.00 L 419.90 262.20 L 435.86 340.71 L 50.00 348.00 Z" fill="#8B5A2B" stroke="#2B1D14" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 184.00 295.00 L 176.67 304.06 L 159.98 308.80 L 139.00 309.02 L 122.84 302.17 L 117.10 295.82 L 122.26 286.86 L 140.03 282.28 L 161.33 282.81 L 177.51 286.77 Z" fill="#C8763A" stroke="#2B1D14" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="250.0" y="220.0" width="38.0" height="48.0" rx="3" fill="#D8E8F0" stroke="#2B1D14" stroke-width="4"/>
+<rect x="300.0" y="215.0" width="38.0" height="53.0" rx="3" fill="#D8E8F0" stroke="#2B1D14" stroke-width="4"/>
+<rect x="350.0" y="240.0" width="55.0" height="32.0" rx="2" fill="#B23A2E" stroke="#2B1D14" stroke-width="4"/>
+<path d="M 385.00 256.00 L 383.15 262.66 L 376.30 263.19 L 370.47 261.85 L 369.14 256.46 L 371.73 249.89 L 376.54 248.95 L 382.66 250.34 Z" fill="#2B1D14" stroke="#2B1D14" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 470.00 290.00 L 630.52 282.14 L 635.74 329.74 L 465.00 338.00 Z" fill="#8B5A2B" stroke="#2B1D14" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 480.00 250.00 L 519.60 250.37 L 519.18 294.76 L 480.00 295.00 Z" fill="#3E6FB0" stroke="#2B1D14" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="0" y="360" width="640" height="80" fill="#C4A574"/>
+<path d="M 520.00 390.00 L 492.40 400.10 L 421.00 404.62 L 321.04 407.92 L 219.46 406.29 L 147.62 397.91 L 119.20 389.37 L 146.39 380.94 L 220.43 374.74 L 321.17 371.80 L 419.35 375.19 L 493.21 381.00 Z" fill="#000000" stroke="none" stroke-width="0" stroke-linejoin="round" stroke-linecap="round" opacity="0.12"/>
+<path d="M 50.00 165.00 L 418.65 154.83 L 419.53 187.75 L 50.00 195.00 Z" fill="#B23A2E" stroke="#2B1D14" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" opacity="0.75"/>
+<path d="M 200.00 165.00 L 200.63 183.20 L 200.00 200.00" fill="none" stroke="#3F6B3A" stroke-width="4" stroke-linecap="round"/>
+</g>
+</svg>

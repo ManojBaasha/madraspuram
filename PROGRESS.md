@@ -1,28 +1,29 @@
 # Progress
 
-## Current phase: 0 — Recon
+## Current phase: 2 complete → starting 3
 
-### Done
-- [x] Located Godot 4.7.2 at `/Applications/Godot.app/Contents/MacOS/Godot`
-- [x] Python 3.11.13 + numpy 2.3.3
-- [x] git 2.39.5, xmllint libxml 20913
-- [x] Wrote `AGENT_BRIEF.md`, `DECISIONS.md`, `CREDITS.md`, `GAGS.md`
+### Phase 0
+- Godot 4.7.2, Python 3.11.13, numpy, git, xmllint OK
+- ffmpeg broken (libass); Pillow GIF fallback decided
 
-### Verification (Phase 0)
-
+### Phase 1
 ```
-Godot: 4.7.2.stable.official.ed1daf0bf
-Python: 3.11.13
-numpy: 2.3.3
-git: 2.39.5 (Apple Git-154)
-xmllint: libxml 20913
-ffmpeg: BROKEN — dyld missing /opt/homebrew/opt/libass/lib/libass.9.dylib
-export_templates: dir present at ~/Library/Application Support/Godot/export_templates/
+boot clean
+0 tests — PASS (clean)
 ```
 
-### Known issues
-- ffmpeg needs libass fix before Movie Maker → GIF pipeline.
-- Export template versions to confirm before Phase 9.
+### Phase 2 — Art style sheet
+- 24 SVGs via `python3 tools/art/build.py`; all `xmllint --noout` valid
+- Contact sheet: `review/contact_sheet.png`
+
+#### Self-critique (5 weak → fixed top 3)
+1. Tea kadai slice felt empty / flat → added wires, crows, doorway, shade, bench blocker silhouette
+2. Auto silhouette weak → clearer cabin/nose, canopy bars, meter numerals, headlight
+3. Tea master face/pour unreadability → bigger moustache, brows, catching tumbler, thicker pour
+4. Still weak: robot arm reads as a wedge (acceptable for push smear; polish later)
+5. Still weak: loading face spinner is minimal (OK for screen-face language)
+
+**CHECKPOINT 1:** Art contact sheet ready for Manoj taste pass (continuing per “don’t stop” instruction).
 
 ### Next
-Phase 1 skeleton.
+Phase 3 robot feel + push + heat.

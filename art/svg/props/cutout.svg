@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="260" viewBox="0 0 180 260">
+
+<g>
+<path d="M 10.00 10.00 L 151.09 10.85 L 149.72 230.48 L 10.00 230.00 Z" fill="#B23A2E" stroke="#2B1D14" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 40.00 80.00 L 121.00 70.21 L 129.50 199.36 L 30.00 210.00 Z" fill="#F2C230" stroke="#2B1D14" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 112.00 55.00 L 108.64 72.14 L 94.95 87.31 L 79.13 92.19 L 63.93 85.49 L 51.79 73.57 L 46.96 54.20 L 51.52 36.51 L 63.80 23.93 L 79.05 18.54 L 95.12 23.87 L 107.71 37.00 Z" fill="#E9C98B" stroke="#2B1D14" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 58.00 50.00 L 100.87 47.66 L 100.63 60.26 L 56.00 62.00 Z" fill="#2B1D14" stroke="#2B1D14" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 120.00 100.00 L 159.20 68.84 L 153.87 90.74 L 125.00 120.00 Z" fill="#E9C98B" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="80" y="235" text-anchor="middle" font-size="12" fill="#2B1D14">மாஸ் ஹீரோ சுந்தர்</text>
+</g>
+</svg>

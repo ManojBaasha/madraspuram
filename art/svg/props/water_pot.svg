@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="130" viewBox="0 0 120 130">
+
+<g>
+<path d="M 100.00 70.00 L 95.80 89.85 L 85.01 108.25 L 67.99 116.26 L 50.65 117.28 L 36.20 106.94 L 23.13 91.96 L 20.74 69.46 L 24.09 48.06 L 33.96 32.44 L 50.22 22.62 L 68.85 22.73 L 84.12 32.30 L 96.04 49.17 Z" fill="#3E6FB0" stroke="#2B1D14" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 78.00 35.00 L 74.76 42.22 L 64.72 45.36 L 55.27 45.84 L 44.40 42.56 L 41.86 36.05 L 44.77 26.96 L 55.40 23.33 L 66.29 24.28 L 74.56 27.95 Z" fill="#3E6FB0" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 72.00 55.00 L 67.58 59.44 L 58.97 60.96 L 52.12 60.37 L 48.04 56.19 L 50.41 50.80 L 60.11 49.66 L 68.49 50.76 Z" fill="#E8EEF2" stroke="#2B1D14" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+</svg>
