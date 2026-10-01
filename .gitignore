@@ -1,0 +1,11 @@
+.godot/
+.import/
+review/run/
+review/*.log
+review/*.gif
+review/contact_sheet.png
+!review/final/
+build/
+*.translation
+.DS_Store
+*.tmp

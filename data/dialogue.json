@@ -1,0 +1,73 @@
+{
+  "npcs": {
+    "tea_master": {
+      "default": "no_milk",
+      "flag_rules": [
+        {"when": {"tea_done": true}, "line": "after_tea"},
+        {"when": {"has_milk": true}, "line": "got_milk"},
+        {"when": {}, "line": "no_milk"}
+      ],
+      "lines": {
+        "no_milk": {
+          "ta": "பால் இன்னும் வரல. டீ இல்ல, போ போ.",
+          "en_subtitle": "Milk still not came. Tea no. Go go.",
+          "confidence": "high"
+        },
+        "got_milk": {
+          "ta": "ஓ பால்! இப்ப பாரு சார்.",
+          "en_subtitle": "Oh milk! Now see sir.",
+          "confidence": "medium"
+        },
+        "after_tea": {
+          "ta": "குடிச்சுட்டு போடா ரோபோ.",
+          "en_subtitle": "Drink finish then go robot.",
+          "confidence": "medium"
+        }
+      }
+    },
+    "auto_driver": {
+      "default": "sleeping",
+      "flag_rules": [
+        {"when": {"auto_moved": true}, "line": "moved"},
+        {"when": {}, "line": "sleeping"}
+      ],
+      "lines": {
+        "sleeping": {
+          "ta": "zzz... மீட்டரா? அதெல்லாம் போட முடியாது சார்.",
+          "en_subtitle": "zzz... Meter? That all cannot put sir.",
+          "confidence": "high"
+        },
+        "fare": {
+          "ta": "நூத்தி அம்பது குடுங்க.",
+          "en_subtitle": "Give one-fifty.",
+          "confidence": "high"
+        },
+        "moved": {
+          "ta": "சரி போங்கடா.",
+          "en_subtitle": "OK go-da.",
+          "confidence": "medium"
+        }
+      }
+    },
+    "bus_conductor": {
+      "default": "eject",
+      "lines": {
+        "eject": {
+          "ta": "உள்ள போங்க, உள்ள போங்க, அட்ஜஸ்ட் பண்ணிக்கோங்க.",
+          "en_subtitle": "Inside go, inside go, adjust yourself-ko.",
+          "confidence": "high"
+        }
+      }
+    },
+    "directions_man": {
+      "default": "default",
+      "lines": {
+        "default": {
+          "ta": "நேரா போயி லெஃப்ட் எடு, அப்புறம் யார்கிட்டயாவது கேளு.",
+          "en_subtitle": "Straight go take left, after ask anybody.",
+          "confidence": "high"
+        }
+      }
+    }
+  }
+}

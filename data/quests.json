@@ -1,0 +1,5 @@
+# Placeholder quests for graybox
+{
+  "order": ["auto_moved", "has_milk", "tea_done"],
+  "zones": ["bus_stop", "tea_kadai", "auto_stand"]
+}

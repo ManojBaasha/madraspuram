@@ -6,7 +6,7 @@
 
 ## Toolchain
 - **Godot binary:** `/Applications/Godot.app/Contents/MacOS/Godot` (4.7.2.stable). `tools/verify.sh` uses `GODOT` env or this path.
-- **ffmpeg:** Homebrew ffmpeg was broken (missing `libass.9.dylib`). Logged; will reinstall libass or use Pillow/imageio for GIFs if needed.
+- **ffmpeg:** Homebrew ffmpeg broken (missing `libass.9.dylib`); brew reinstall blocked. **Alternative:** Pillow builds GIFs from Movie Maker frames via `tools/review/frames_to_gif.py`.
 - **Export templates:** Directory exists; contents checked in Phase 0 PROGRESS. Missing templates = hard stop at Phase 9 only.
 
 ## Design picks
