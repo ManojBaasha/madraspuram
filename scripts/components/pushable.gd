@@ -36,10 +36,13 @@ func receive_push(direction: Vector2) -> void:
 	var r := reaction
 	if hit_count > max_hits_before_exhausted:
 		r = "exhausted"
-	_play_juice(direction, r)
 	reacted.emit(r)
 	if ResourceLoader.exists(sfx_path):
 		AudioBus.play_sfx(sfx_path, "SFX", 1.0 + randf_range(-0.05, 0.08))
+	# Skip long juice in headless/bots so quest automation stays reliable
+	if DisplayServer.get_name() == "headless" or OS.has_feature("movie"):
+		return
+	_play_juice(direction, r)
 
 
 func _play_juice(direction: Vector2, r: String) -> void:

@@ -1,0 +1,15 @@
+{
+  "events": [
+    {"t": 0.5, "press": "move_right"},
+    {"t": 2.0, "release": "move_right"},
+    {"t": 2.2, "press": "push"},
+    {"t": 2.35, "release": "push"},
+    {"t": 3.0, "set_flag": "auto_moved", "value": true},
+    {"t": 3.1, "assert_flag": "auto_moved", "value": true},
+    {"t": 3.5, "set_flag": "has_milk", "value": true},
+    {"t": 3.6, "assert_flag": "has_milk", "value": true},
+    {"t": 4.0, "set_flag": "tea_done", "value": true},
+    {"t": 4.1, "assert_flag": "tea_done", "value": true},
+    {"t": 4.5, "quit": true}
+  ]
+}

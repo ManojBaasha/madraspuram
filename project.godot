@@ -7,7 +7,7 @@ config_version=5
 
 config/name="Madraspuram"
 config/description="A tiny robot on George Street. Push everything."
-run/main_scene="res://scenes/levels/main.tscn"
+run/main_scene="res://scenes/levels/george_street.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
