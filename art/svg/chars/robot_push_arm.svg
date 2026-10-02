@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="130" viewBox="0 0 56 130">
+
+<g>
+<path d="M 8.00 8.00 L 41.66 7.20 L 44.96 51.20 L 10.00 54.00 Z" fill="#E8EEF2" stroke="#2B1D14" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 37.00 52.00 L 34.37 59.06 L 25.29 63.24 L 17.16 60.44 L 15.63 50.90 L 18.66 44.23 L 26.33 42.09 L 33.78 44.22 Z" fill="#7A9BB8" stroke="#2B1D14" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 10.00 56.00 L 44.42 54.56 L 53.28 107.15 L 4.00 110.00 Z" fill="#7A9BB8" stroke="#2B1D14" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 14.00 68.00 L 28.23 66.26 L 44.00 66.00" fill="none" stroke="#E8EEF2" stroke-width="3" stroke-linecap="round"/>
+<path d="M 12.00 80.00 L 29.10 78.69 L 46.00 78.00" fill="none" stroke="#E8EEF2" stroke-width="3" stroke-linecap="round"/>
+<path d="M 14.00 92.00 L 29.08 90.58 L 44.00 90.00" fill="none" stroke="#E8EEF2" stroke-width="3" stroke-linecap="round"/>
+<rect x="2.0" y="105.0" width="52.0" height="22.0" rx="4" fill="#E8EEF2" stroke="#2B1D14" stroke-width="5"/>
+<text x="28" y="121" text-anchor="middle" font-size="9" font-family="sans-serif" fill="#2B1D14">PUSH</text>
+</g>
+</svg>

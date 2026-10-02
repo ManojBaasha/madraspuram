@@ -1,0 +1,19 @@
+{
+  "events": [
+    {"t": 0.2, "press": "move_right"},
+    {"t": 1.5, "press": "move_up"},
+    {"t": 2.5, "release": "move_up"},
+    {"t": 2.6, "press": "move_down"},
+    {"t": 3.8, "release": "move_down"},
+    {"t": 4.0, "press": "push"},
+    {"t": 4.15, "release": "push"},
+    {"t": 5.0, "press": "move_up"},
+    {"t": 6.0, "release": "move_up"},
+    {"t": 7.5, "release": "move_right"},
+    {"t": 8.0, "press": "move_left"},
+    {"t": 9.0, "press": "move_down"},
+    {"t": 10.0, "release": "move_down"},
+    {"t": 11.0, "release": "move_left"},
+    {"t": 11.5, "quit": true}
+  ]
+}

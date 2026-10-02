@@ -1,0 +1,17 @@
+{
+  "events": [
+    {"t": 0.3, "press": "move_right"},
+    {"t": 2.0, "press": "move_up"},
+    {"t": 3.0, "release": "move_up"},
+    {"t": 3.2, "press": "move_down"},
+    {"t": 4.5, "release": "move_down"},
+    {"t": 5.0, "release": "move_right"},
+    {"t": 5.3, "press": "move_left"},
+    {"t": 7.0, "press": "move_up"},
+    {"t": 8.0, "release": "move_up"},
+    {"t": 9.0, "release": "move_left"},
+    {"t": 9.5, "press": "push"},
+    {"t": 9.7, "release": "push"},
+    {"t": 10.5, "quit": true}
+  ]
+}

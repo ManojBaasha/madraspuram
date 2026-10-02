@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/george_street.tscn" id="1"]
+[ext_resource type="Script" path="res://tests/bots/bot_player.gd" id="2"]
+
+[node name="Playtest" type="Node2D"]
+
+[node name="Street" parent="." instance=ExtResource("1")]
+
+[node name="Bot" type="Node" parent="."]
+script = ExtResource("2")
+timeline_path = "res://tests/bots/playtest_move.json"

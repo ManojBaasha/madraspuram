@@ -83,20 +83,39 @@ func _play_juice(direction: Vector2, r: String) -> void:
 
 
 func _spawn_impact_star() -> void:
+	var parent_n := get_parent() as Node2D
+	if parent_n == null:
+		return
+	# Burst of little sparks — TGYH slap pop
+	for i in 5:
+		var bit := Polygon2D.new()
+		bit.color = Color(1.0, 0.92, 0.55) if i % 2 == 0 else Color(1, 1, 1)
+		bit.polygon = PackedVector2Array([
+			Vector2(0, -6), Vector2(2, -2), Vector2(6, 0), Vector2(2, 2),
+			Vector2(0, 6), Vector2(-2, 2), Vector2(-6, 0), Vector2(-2, -2),
+		])
+		parent_n.add_child(bit)
+		bit.position = Vector2(0, -24)
+		var ang := (TAU / 5.0) * i + randf_range(-0.2, 0.2)
+		var dest := bit.position + Vector2(cos(ang), sin(ang)) * randf_range(28, 48)
+		var tw := create_tween()
+		tw.tween_property(bit, "position", dest, 0.18).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		tw.parallel().tween_property(bit, "modulate:a", 0.0, 0.18)
+		tw.parallel().tween_property(bit, "scale", Vector2(0.3, 0.3), 0.18)
+		tw.tween_callback(bit.queue_free)
+	# Center flash star
 	var star := Polygon2D.new()
 	star.color = Color(1, 1, 1, 1)
 	star.polygon = PackedVector2Array([
-		Vector2(0, -14), Vector2(4, -4), Vector2(14, 0), Vector2(4, 4),
-		Vector2(0, 14), Vector2(-4, 4), Vector2(-14, 0), Vector2(-4, -4),
+		Vector2(0, -16), Vector2(5, -5), Vector2(16, 0), Vector2(5, 5),
+		Vector2(0, 16), Vector2(-5, 5), Vector2(-16, 0), Vector2(-5, -5),
 	])
-	var parent_n := get_parent() as Node2D
-	if parent_n:
-		parent_n.add_child(star)
-		star.position = Vector2(0, -20)
-		var tw := create_tween()
-		tw.tween_property(star, "scale", Vector2(1.6, 1.6), 0.08)
-		tw.tween_property(star, "modulate:a", 0.0, 0.12)
-		tw.tween_callback(star.queue_free)
+	parent_n.add_child(star)
+	star.position = Vector2(0, -22)
+	var tw2 := create_tween()
+	tw2.tween_property(star, "scale", Vector2(1.8, 1.8), 0.07)
+	tw2.tween_property(star, "modulate:a", 0.0, 0.1)
+	tw2.tween_callback(star.queue_free)
 
 
 func _tween_wobble() -> void:

@@ -1,0 +1,22 @@
+{
+  "events": [
+    {"t": 0.4, "press": "move_right"},
+    {"t": 1.2, "press": "move_down"},
+    {"t": 2.0, "release": "move_down"},
+    {"t": 2.2, "press": "move_up"},
+    {"t": 3.0, "release": "move_up"},
+    {"t": 3.2, "press": "push"},
+    {"t": 3.35, "release": "push"},
+    {"t": 3.6, "press": "move_right"},
+    {"t": 6.0, "press": "move_down"},
+    {"t": 7.0, "release": "move_down"},
+    {"t": 7.2, "press": "push"},
+    {"t": 7.35, "release": "push"},
+    {"t": 7.6, "press": "move_up"},
+    {"t": 8.5, "release": "move_up"},
+    {"t": 9.0, "release": "move_right"},
+    {"t": 9.3, "press": "jump"},
+    {"t": 9.45, "release": "jump"},
+    {"t": 10.0, "quit": true}
+  ]
+}

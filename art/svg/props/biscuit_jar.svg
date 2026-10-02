@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="140" viewBox="0 0 120 140">
+
+<g>
+<path d="M 96.00 125.00 L 89.29 129.89 L 71.15 135.67 L 49.95 134.54 L 29.71 131.50 L 24.32 125.28 L 31.32 118.44 L 47.79 114.50 L 70.65 115.94 L 89.12 119.12 Z" fill="#000000" stroke="none" stroke-width="0" stroke-linejoin="round" stroke-linecap="round" opacity="0.15"/>
+<path d="M 28.00 40.00 L 91.98 39.28 L 98.37 115.47 L 22.00 118.00 Z" fill="#D8E8F0" stroke="#2B1D14" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" opacity="0.75"/>
+<rect x="36.0" y="55.0" width="48.0" height="12.0" rx="2" fill="#E8C070" stroke="#2B1D14" stroke-width="2"/>
+<rect x="34.0" y="70.0" width="50.0" height="12.0" rx="2" fill="#D4A858" stroke="#2B1D14" stroke-width="2"/>
+<rect x="38.0" y="85.0" width="46.0" height="12.0" rx="2" fill="#E8C070" stroke="#2B1D14" stroke-width="2"/>
+<rect x="36.0" y="98.0" width="48.0" height="10.0" rx="2" fill="#C89040" stroke="#2B1D14" stroke-width="2"/>
+<path d="M 98.00 36.00 L 91.83 43.37 L 79.13 47.27 L 59.81 49.68 L 41.86 47.59 L 26.83 42.01 L 22.75 35.69 L 27.02 28.98 L 40.56 23.56 L 60.24 22.48 L 79.54 24.27 L 92.91 29.00 Z" fill="#B23A2E" stroke="#2B1D14" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 30.00 28.00 L 88.94 27.71 L 90.79 38.60 L 30.00 40.00 Z" fill="#B23A2E" stroke="#2B1D14" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 40.00 72.00 L 81.20 71.80 L 80.29 89.64 L 40.00 90.00 Z" fill="#FFFDF4" stroke="#2B1D14" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60" y="85" text-anchor="middle" font-size="9" fill="#2B1D14">பிஸ்கட்</text>
+</g>
+</svg>

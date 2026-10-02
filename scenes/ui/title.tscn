@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scenes/ui/title.gd" id="1"]
+[ext_resource type="Texture2D" path="res://art/svg/chars/robot_full_neutral.svg" id="2"]
 
 [node name="Title" type="Control"]
 layout_mode = 3
@@ -16,47 +17,90 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.965, 0.906, 0.757, 1)
 
+[node name="SkyTop" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 280.0
+color = Color(0.973, 0.929, 0.816, 1)
+
+[node name="Band" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 620.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.769, 0.647, 0.455, 1)
+
+[node name="Curb" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 612.0
+offset_right = 1920.0
+offset_bottom = 624.0
+color = Color(0.169, 0.114, 0.078, 1)
+
+[node name="Robot" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 280.0
+offset_right = 1140.0
+offset_bottom = 600.0
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -320.0
-offset_top = -120.0
+offset_top = 80.0
 offset_right = 320.0
-offset_bottom = -40.0
-theme_override_font_sizes/font_size = 64
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0.169, 0.114, 0.078, 1)
+theme_override_font_sizes/font_size = 72
 horizontal_alignment = 1
 text = "Madraspuram"
 
 [node name="Sub" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -300.0
-offset_top = -20.0
+offset_top = 160.0
 offset_right = 300.0
-offset_bottom = 40.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0.3, 0.2, 0.12, 1)
 theme_override_font_sizes/font_size = 28
 horizontal_alignment = 1
 text = "George Street"
 
-[node name="Prompt" type="Label" parent="."]
+[node name="TamilLine" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -300.0
-offset_top = 80.0
+offset_top = 210.0
 offset_right = 300.0
-offset_bottom = 140.0
+offset_bottom = 250.0
+theme_override_colors/font_color = Color(0.698, 0.227, 0.18, 1)
 theme_override_font_sizes/font_size = 22
 horizontal_alignment = 1
-text = "Press Jump / Push to start"
+text = "ஒரு சின்ன ரோபோ · ஒரு தெரு"
+
+[node name="Prompt" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -120.0
+offset_right = 300.0
+offset_bottom = -60.0
+theme_override_colors/font_color = Color(0.169, 0.114, 0.078, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+text = "Press Space or J to start"
